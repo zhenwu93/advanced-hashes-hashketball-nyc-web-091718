@@ -169,7 +169,6 @@ game_hash.collect do |team, team_details|
   end
 end
 
-team_names
 
 def player_numbers
 end
