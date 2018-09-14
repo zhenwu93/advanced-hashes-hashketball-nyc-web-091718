@@ -170,7 +170,20 @@ game_hash.collect do |team, team_details|
 end
 
 
-def player_numbers
+def player_numbers(team_name)
+  player_number  = []
+  game_hash.each do |team, team_details|
+    if team_details[:name] == team_name
+      team_details[:players].each do |player|
+        player.each do |key, value|
+          if key == :number
+            player_number << value
+          end
+        end
+      end
+    end
+  end
+  player_number
 end
 
 def player_stats
